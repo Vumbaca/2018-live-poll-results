@@ -1,0 +1,23 @@
+---
+title: "Poll Results"
+author: "Max Vumbaca"
+date: "September 24, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(dplyr)
+```
+
+```{r}
+x <-read_csv("data/elections-poll-me02-1.csv")
+```
+
+```{r}
+x %>%
+  group_by(educ) %>%
+  count(response)
+```
+
